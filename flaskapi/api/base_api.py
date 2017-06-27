@@ -1,5 +1,4 @@
 # encoding: utf-8
-from flask import json
 from flaskapi.api import api,api_add
 import datetime
 
@@ -15,15 +14,14 @@ def test_api(my_dict, my_int, my_str, my_list, my_datetime):
     :return: code or message
     """
 
-    data1 = json.loads(my_dict)
+    data1 = my_dict
     data2 = my_int
     data3 = my_str
     data4 = my_list
     data5 = my_datetime
     data6 = datetime.datetime.strptime(my_datetime,'%Y-%m-%d %H:%M:%S')
     result = {
-        "raw__my_dict": my_dict,
-        "loads__my_dict": data1,
+        "my_dict": data1,
         "my_int": data2,
         "my_str": data3,
         "my_list": data4,

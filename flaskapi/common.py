@@ -22,6 +22,7 @@ def get_all_api(*args, **kwargs):
         item = compose_api_info(i, api_dict)
         result[i] = item
     result.pop("get_all_api")
+    result.pop("hello")
     return result
 
 

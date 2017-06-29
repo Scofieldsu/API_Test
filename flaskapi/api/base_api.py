@@ -29,3 +29,12 @@ def test_api(my_dict, my_int, my_str, my_list, my_datetime):
         "StrPTime__my_datetime": data6
     }
     return result
+
+@api_add
+def hello(name):
+    """
+    :description welcome to use hello
+    :param username: str
+    :return:
+    """
+    return "welcome to use Api-Test,"+name

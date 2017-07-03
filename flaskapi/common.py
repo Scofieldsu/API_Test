@@ -2,7 +2,7 @@
 
 from flaskapi.api.base_api import *
 from flaskapi.utils.api_tools import compose_api_info
-from demo_api import *
+
 
 
 @api_add

@@ -2,6 +2,7 @@
 
 from flask import Flask
 from flaskapi.common import api
+from demo_api import *
 from flask_cors import *
 
 import config

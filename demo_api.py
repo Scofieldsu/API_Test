@@ -28,7 +28,7 @@ def logout_test(name):
 @api_class
 class UserApi(object):
 
-    def login_test(name, pwd):
+    def login_test(self,name, pwd):
         """
         :description test登录接口
         :param name: str
@@ -39,7 +39,7 @@ class UserApi(object):
         return result
 
 
-    def logout_test(name):
+    def logout_test(self,name):
         """
         :description test退出接口
         :param name: str

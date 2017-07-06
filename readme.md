@@ -3,19 +3,21 @@
  - - -
  - 运行后，localhost:5000/api_test/ 为api测试页面
 
- - 重新整合了代码，讲flaskapi部分放在一起方便移植。
+ - 其中flaskapi包也可以从内网pypi镜像站安装
 
- - 怎么移植：依赖于json-rpc,Flask-Cors。安装后，可以将flaskapi包复制过去，在app实例中，
+ - 在appmanage.py中:
    ```python
    app.register_blueprint(api.as_blueprint())
    CORS(app, supports_credentials=True)
 
    ```
-   例如在demo.py中需要写接口，
-   > from flaskapi.api import api_add
+ - 例如在demo_api.py中需要写接口
 
-   然后在flaskapi/common.py中导入即可：
-   > from demo import *
+  > from flaskapi.api import api_add
+
+ - 然后在appmanage.py中导入即可：
+
+  > from demo_api import *
 
  - 接口注释根据pycharm的自动补全，在参数后面填写数据类型即可；其中:description为接口描述（可选项）
 
@@ -26,10 +28,10 @@
 def my_method(param_dict, param_int, param_str, param_list):
     """
     :description  测试接口
-    :param param_dict: dict
-    :param param_int: int
-    :param param_str: str
-    :param param_list: list
+    :param param_dict: dict:字典参数
+    :param param_int: int:整型参数
+    :param param_str: str:字符串参数
+    :param param_list: list:列表参数
     :return: code or message
     """
     return result

@@ -1,5 +1,5 @@
 # encoding: utf-8
-
+import sys
 from flaskapi.api.base_api import *
 from flaskapi.utils.api_tools import compose_api_info
 
@@ -14,6 +14,7 @@ def get_all_api(*args, **kwargs):
     :return: 所有接口信息
     """
     # 从method_map获取所有接口方法，重组数格式
+    _name = sys._getframe().f_code.co_name
     api_dict = api.dispatcher.method_map
     api_name_list = api_dict.keys()
     result = {}
@@ -21,7 +22,7 @@ def get_all_api(*args, **kwargs):
         item = {}
         item = compose_api_info(i, api_dict)
         result[i] = item
-    result.pop("get_all_api")
+    result.pop(_name)
     result.pop("hello")
     return result
 

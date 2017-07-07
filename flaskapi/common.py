@@ -19,7 +19,6 @@ def get_all_api(*args, **kwargs):
     api_name_list = api_dict.keys()
     result = dict()
     for i in api_name_list:
-        item = dict()
         item = compose_api_info(i, api_dict)
         result[i] = item
     result.pop(_name)

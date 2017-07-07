@@ -17,9 +17,9 @@ def get_all_api(*args, **kwargs):
     _name = sys._getframe().f_code.co_name
     api_dict = api.dispatcher.method_map
     api_name_list = api_dict.keys()
-    result = {}
+    result = dict()
     for i in api_name_list:
-        item = {}
+        item = dict()
         item = compose_api_info(i, api_dict)
         result[i] = item
     result.pop(_name)

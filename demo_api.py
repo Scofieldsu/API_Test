@@ -1,6 +1,7 @@
 # encoding: utf-8
 
 from flaskapi.api import api_add,api_class
+from apidata import api_data
 
 
 @api_add
@@ -28,6 +29,7 @@ def logout_test(name):
 @api_class
 class UserApi(object):
 
+    @api_data
     def login_test(self,name, pwd):
         """
         :description test登录接口
@@ -38,7 +40,7 @@ class UserApi(object):
         result = {"msg": "login success", "code": 200}
         return result
 
-
+    @api_data
     def logout_test(self,name):
         """
         :description test退出接口

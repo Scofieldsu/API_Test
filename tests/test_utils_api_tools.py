@@ -17,8 +17,8 @@ import sys
 
 import pytest
 
-myPath = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, myPath + '/../')
+# myPath = os.path.dirname(os.path.abspath(__file__))
+# sys.path.insert(0, myPath + '/../')
 from flaskapi.utils.api_tools import trans_str_to_dict, dict_move_key, compose_api_info
 from jsonrpc.backend.flask import api
 

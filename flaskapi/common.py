@@ -14,7 +14,15 @@ def get_all_api(*args, **kwargs):
     :param kwargs:str
     :return: 所有接口信息
     """
-    result = get_all_api_data(file_type='py', decor_list=['api_add', 'api_data'])
+    from apidata.tests import source_path
+    project_dir = os.path.abspath('.')
+    except_folder = ['.git','.idea','docs','static','templates','tests']
+    except_paths = list()
+    except_dirs = list()
+    except_dirs.append(source_path)
+    for x in except_folder:
+        except_dirs.append(project_dir+os.sep+x)
+    result = get_all_api_data(file_type='py', decor_list=['api_add', 'api_data'], except_dirs=except_dirs,  except_paths=except_paths)
     result.pop("get_all_api_flask")
     result.pop("hello")
     return result

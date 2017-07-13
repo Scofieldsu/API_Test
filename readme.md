@@ -37,5 +37,7 @@ def my_method(param_dict, param_int, param_str, param_list):
     return result
  ```
 
+---
+### 效果图
 
 ![api-test](picture/show.gif)

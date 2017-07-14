@@ -1,5 +1,7 @@
 # encoding: utf-8
+
 PARAMS_TYPE = ['dict','int','str','float','list','datetime']
+
 fgs = [
     "name",                # flags[0]
     "param_explain",       #    1

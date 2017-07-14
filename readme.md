@@ -49,8 +49,11 @@ def my_method(param_dict, param_int, param_str, param_list):
 ### 效果图
 
 - 此项目中使用了flask-api或api-data两种方法分别实现获取接口信息。
-  - 默认获取接口的方法是get_all_api，结合的是api-data。
-  - settings更改为get_all_api_flask时，则使用了flask-api。
-  - 两个package的具体使用参考flaskapi/common.py中的get_all_api和get_all_api_flask方法。
+
+  - 使用flask-api包时，在flaskapi/common.py中已经实现了get_all_api接口。
+
+  - 使用api-data包时，在demo_api.py中实现了get_all_api_new接口，调用api-data中的方法进行返回数据。
+
+  - 默认调用get_all_api接口（使用flask-api包），当更改更改为get_all_api_new时，则使用了api-data。
 
 ![api-test](picture/show.gif)

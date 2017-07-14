@@ -22,7 +22,8 @@ def get_all_api(*args, **kwargs):
         item = compose_api_info(i, api_dict)
         result[i] = item
     result.pop(_name)
-    result.pop("hello")
+    if "hello" in result:
+        result.pop("hello")
     return result
 
 

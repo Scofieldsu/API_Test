@@ -1,16 +1,22 @@
-- 安装依赖：pip install -r requirements.txt
-- python run.py
+- 使用docker-compose启动： docker-compose up -d
+
+- 使用gunicorn启动：gunicorn -c gun.conf  run:app
+
+-  调试运行：python run.py
+
  - - -
+
  - 运行后，localhost:5000/api_test/ 为api测试页面
 
  - 其中flaskapi包也可以从内网pypi镜像站安装
 
  - 在appmanage.py中:
+
    ```python
    app.register_blueprint(api.as_blueprint())
    CORS(app, supports_credentials=True)
-
    ```
+
  - 例如在demo_api.py中需要写接口
 
   > from flaskapi.api import api_add
@@ -22,6 +28,7 @@
  - 接口注释根据pycharm的自动补全，在参数后面填写数据类型即可；其中:description为接口描述（可选项）
 
  - 接口模型：
+
 
  ```python
 @api.dispatcher.add_method

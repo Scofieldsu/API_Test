@@ -1,3 +1,12 @@
+# API-Test
+
+![pyversions](https://img.shields.io/badge/python%20-2.7-blue.svg)
+![vueversions](https://img.shields.io/badge/Vue.js-2.3.3-4fc08d.svg)
+![es2015](https://img.shields.io/badge/ECMAScript-6-green.svg)
+![element ui](https://img.shields.io/badge/element-1.3.7-20a0ff.svg)
+
+---
+
 - 使用docker-compose启动： docker-compose up -d
 
 - 使用gunicorn启动：gunicorn -c gun.conf  run:app
@@ -10,20 +19,9 @@
 
  - 其中flaskapi包也可以从内网pypi镜像站安装
 
- - 在appmanage.py中:
-
-   ```python
-   app.register_blueprint(api.as_blueprint())
-   CORS(app, supports_credentials=True)
-   ```
-
- - 例如在demo_api.py中需要写接口
+ - 在demo_api.py中需要写接口
 
   > from flaskapi.api import api_add
-
- - 然后在appmanage.py中导入即可：
-
-  > from demo_api import *
 
  - 接口注释根据pycharm的自动补全，在参数后面填写数据类型即可；其中:description为接口描述（可选项）
 
@@ -31,7 +29,7 @@
 
 
  ```python
-@api.dispatcher.add_method
+@api_add
 def my_method(param_dict, param_int, param_str, param_list):
     """
     :description  测试接口
